@@ -1,0 +1,113 @@
+			ALGORITHM of our code
+MAIN function
+	STEP 1:- Declare the "First" USER_NODE and assign it a NULL value.
+	STEP 2:- Call the starting_display() function, which displays the initial page of the project.
+	STEP 3:- Assign the return value of user() function to "First".
+	STEP 4:- Display the options of cities available to the user and prompt him to enter one.
+	STEP 5:- Compare the option selected by the user and jump to the appropriate function.
+	STEP 6:- If the user types a city name that is not available in our code prompt him to try again.
+	STEP 7:- After the function returns from the appropriate source function go back to STEP 3.
+	STEP 8:- return.
+
+STARTING_DISPLAY function
+	STEP 1:- Display in a systematic and in an ordered manner the name of our project.
+	STEP 2:- Display the names of the team members of our project in certain time intervals 
+			which can be done by using a built-in clock() function in the "time.h" header file.
+	STEP 3:- Ask the user to enter the password and enter a while loop to check whether the password is correct.
+			If the password is correct break the for loop and returns to the main() function, else continue.
+	STEP 4:- return.
+
+USER function
+	STEP 1:- Provide the user three options to choose from:-
+				1.Sign up 2.Login 3.Exit
+	STEP 2:- After the user enters the option use a switch case to jump to appropriate function
+			case 1:create();
+			case 2:login();
+			case 3:exit(0);-- if the user chooses option should exit the whole program.
+	STEP 3:- return.
+
+CREATE function
+	STEP 1:- Check the value of the first NODE of the linked list.
+	STEP 2:- If NULL, create space for a new USER_NODE and assign it to "First".
+	STEP 3:- Input all the values of the "user" structure.
+	STEP 4:- Set First->link=NULL.
+	STEP 5:- return First.
+
+LOGIN function
+	STEP 1:- If the first NODE of the linked list is not NULL ask the user to enter the username.
+	STEP 2:- Compare the entered username with all the values of usernames in the "User" singly linked list.
+	STEP 3:- If found, go to STEP 9, else ask the user to enter a valid username again.
+	STEP 4:- Now ask the user to enter the password for his/her login account.
+	STEP 5:- Enter a while loop and check the entered password with the password of the current username.
+	STEP 6:- If the password is correct, break the while loop, else go to STEP 5.
+	STEP 7:- return.
+
+The city() function is a basic template for all similar functions.
+
+CITY() function
+	STEP 1:- Ask user for destination.
+	STEP 2:- Compare the entered destination with the names of available cities.
+	STEP 3:- If matched, branch to the appropriate "source_destination", else ask the user to try again.
+	STEP 4:- return;
+
+The source_destination() function is a basic template for all similar functions.
+
+SOURCE_DESTINATION() function
+	STEP 1:- Display all the available trains and their information.
+	STEP 2:- Ask the user for the train number of the train he/she wants to book.
+	STEP 3:- Jump to the particular train by using a "switch" statement and ask the user to type the number of tickets he/she wants.
+	STEP 4:- Obtain the user details by using the passdata() and Readdata() functions.
+	STEP 5:- Calculate the sum of amount of all the tickets by using the calculate() functions and assign the
+			return value to amount global variable.
+	STEP 6:- Print the ticket by using the ticket() function.
+	STEP 7:- return.
+
+PASSDATA() function
+	STEP 1:- Run a "for" loop till the number of tickets the user wants.
+	STEP 2:- Call the ReadData() function.
+	STEP 3:- After the data is read, add the user to the details linked list by using the "front insertion" method of linked list.
+	STEP 4:- Return the linked list.
+
+READDATA() function
+	STEP 1:- Read all the info of the user into the globally declared variables.
+	STEP 2:- return.
+
+INSFRONT() function
+	STEP 1:- Create space for a new node by using the MALLOC macro
+			and assign all its variables the values of the globally declared variables read by ReadData() function.
+	STEP 2:- Use the front insertion method of the singly linked list to insert the new node at the front of linked list.
+	STEP 3:- return the linked list.
+
+CALC() function
+	STEP 1:- Calculate the amount of 'n' tickets by using their type and using the switch statement to do the same.
+	STEP 2:- return the amount of 'n' tickets calculated.
+
+TICKET() function
+	STEP 1:- Display the basic information of the train, date of travel, amount.
+	STEP 2:- Call the coach() function.
+	STEP 3:- Call the seat() function.
+	STEP 4:- Display the information of the users.
+	STEP 5:- return.
+
+SEAT() function
+	STEP 1:- Use the rand() function to generate random seat numbers and use srand(time(t)) to seed the rand() function
+			so that it generates different random values every time.
+	STEP 2:- According to the random number obtained, calculate the berth type by dividing the number by 8
+			(In a train coach the type of berths repeat after an octave).
+	STEP 3:- Print the seat number.
+ 	STEP 4:- return.
+
+PAYMENT() function
+	STEP 1:- Generate a random 4 digit number designated as 'OTP' by usin a ran() function and using
+ 			srand(time(t)) to seed the rand() function so that it generates different random values every time.
+	STEP 2:- Display the OTP on the right hand side of the screen.
+	STEP 3:- Ask user to enter the OTP.
+	STEP 4:- Enter a while loop, if the OTP entered is wrong go to step 2, else break.
+	STEP 5:- return.
+
+COACH() function
+	STEP 1:- Use the ran() function with range to give a random number in the range of 1 to 12.
+	STEP 2:- Print that random number as the coach number.
+	STEP 3:- return.
+
+END
